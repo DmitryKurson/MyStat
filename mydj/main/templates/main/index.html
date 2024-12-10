@@ -1,0 +1,21 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Title {% endblock %}
+{% block content %}
+    {% load static %}
+    <h1>Title</h1>
+    <img src="{% static 'main/img/logo.png' %}">
+    <ul>
+        <li>
+             <a href="{% url 'about' %}"><i class="fa-solid fa-question"></i>   About </a>
+        </li>
+        <li>
+             <a href="{% url 'feedback' %}"><i class="fa-regular fa-comments"></i>   Feedback</a>
+        </li>
+        <li>
+             <a href="{% url 'schedule' %}"><i class="fa-solid fa-table"></i>   Schedule</a>
+        </li>
+        <li>
+            <a href="{% url 'homework' %}"><i class="fa-solid fa-book"></i>   Homework</a>
+        </li>
+    </ul>
+{% endblock %}

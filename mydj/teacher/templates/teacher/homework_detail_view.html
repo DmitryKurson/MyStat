@@ -1,0 +1,14 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Homework {% endblock %}
+{% block content %}
+    <h1>Find your assignment details here:</h1><br>
+
+    <div>
+        <h5>Description: {{task.description}}</h5>
+        <h5>Deadline: {{task.deadline}}</h5><br>
+    </div>
+    <a href="{% url 'homework-delete' task.id %}">Delete</a>
+    <a href="{% url 'homework-update' task.id %}">Update</a><br><br>
+    <a href="{% url 'homework_t' %}"><i class="fa-solid fa-house"></i> Homeworks</a>
+
+{% endblock %}

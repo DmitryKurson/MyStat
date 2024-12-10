@@ -1,0 +1,19 @@
+{% extends 'main/templates/main/homework.html' %}
+{% block title %} Homework {% endblock %}
+
+
+{% block contenta %}
+<h1>Find student assignments here:</h1><br>
+{% endblock %}
+
+
+{% block contenti %}
+    <a href="{% url 'homework-detail' i.id %}">More details</a>
+{% endblock %}
+
+
+{% block contentd %}
+    <a href="{% url 'create_homework' %}"><button>Add homework</button></a><br><br>
+    <a href="{% url 'home_teacher' %}"><i class="fa-solid fa-house"></i> Back</a>
+{% endblock %}
+

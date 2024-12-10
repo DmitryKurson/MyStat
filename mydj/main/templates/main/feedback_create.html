@@ -1,0 +1,18 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Schedule {% endblock %}
+{% block content %}
+    <h1>Please say something about our services</h1><br>
+    <form method = "post">
+        {% csrf_token %}
+        <label>Topic</label><br>
+        {{ form.topic }}<br><br>
+        <label>Description</label><br>
+        {{ form.description }}<br><br>
+        <button type="submit">Send</button>
+    </form>
+    <br>
+
+    <a href="{% url 'feedback' %}"><i class="fa-regular fa-comments"></i> Feedbacks</a>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Give a new homework {% endblock %}
+{% block content %}
+    <h1>Please input information about homework</h1><br>
+    <form method = "post">
+        {% csrf_token %}
+        <label>Description</label><br>
+        {{ form.description }}<br><br>
+        <label>Deadline</label><br>
+        {{ form.deadline }}<br><br>
+        <button type="submit">Add</button>
+    </form>
+    <br>
+
+    <a href="{% url 'homework_t' %}"><i class="fa-solid fa-book"></i> Homeworks</a>
+
+{% endblock %}

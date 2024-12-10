@@ -1,0 +1,14 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Schedule {% endblock %}
+{% block content %}
+    <h1>Find your lesson details here:</h1><br>
+
+    <div>
+        <h5>Subject: {{lesson.subject}}</h5>
+        <h5>Date of lessons: {{lesson.date}}</h5><br>
+    </div>
+    <a href="{% url 'schedule-delete' lesson.id %}">Delete</a>
+    <a href="{% url 'schedule-update' lesson.id %}">Update</a><br><br>
+    <a href="{% url 'schedule_t' %}"><i class="fa-solid fa-house"></i> Back to schedules</a>
+
+{% endblock %}

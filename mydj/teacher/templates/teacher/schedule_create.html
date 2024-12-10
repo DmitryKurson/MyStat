@@ -1,0 +1,17 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Plan a new lesson {% endblock %}
+{% block content %}
+    <h1>Please input information about lesson</h1><br>
+    <form method = "post">
+        {% csrf_token %}
+        <label>Subject: </label><br>
+        {{ form.subject }}<br><br>
+        <label>Date of lesson: </label><br>
+        {{ form.date }}<br><br>
+        <button type="submit">Add</button>
+    </form>
+    <br>
+
+    <a href="{% url 'schedule_t' %}"><i class="fa-solid fa-table"></i> Back</a>
+
+{% endblock %}

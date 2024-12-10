@@ -1,0 +1,23 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Schedule {% endblock %}
+{% block content %}
+
+    {% block contenta %}<h1>Check our schedule below</h1><br>{% endblock %}
+
+    {% for i in lessons %}
+    <div>
+        <h3>Lesson №{{i.id}}</h3>
+        <h4>Subject: {{i.subject}}</h4>
+        <h5>Date of lessons: {{i.date}}</h5>
+        {% block contenti %}
+
+        {% endblock %}
+        <br><br>
+    </div>
+    {% endfor %}
+    {% block contentd %}
+        <a href="{% url 'home_student' %}"><i class="fa-solid fa-house"></i> Home</a>
+    {% endblock %}
+
+
+{% endblock %}

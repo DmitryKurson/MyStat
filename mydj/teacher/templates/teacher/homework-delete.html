@@ -1,0 +1,18 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Delete homework {% endblock %}
+{% block content %}
+
+    {% block contenta %}<h1>Here you can delete homework:</h1><br>{% endblock %}
+
+    <h2>Are you sure? </h2>
+    <form method="post">
+        {% csrf_token %}
+        <br><button type="submit">Yes, i am sure - delete lesson</button>
+    </form>
+    <br><br>
+    {% block contentd %}
+        <a href="{% url 'homework_t' %}"><i class="fa-solid fa-house"></i> Back to homeworks</a>
+    {% endblock %}
+
+
+{% endblock %}

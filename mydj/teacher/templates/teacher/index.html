@@ -1,0 +1,17 @@
+{% extends 'mydj/templates/mydj/layout.html' %}
+{% block title %} Give a new homework {% endblock %}
+{% block content %}
+
+    {% load static %}
+    <h1>Teacher main menu</h1>
+    <img src="{% static 'main/img/logo.png' %}">
+    <ul>
+        <li>
+             <a href="{% url 'homework_t' %}"><i class="fa-solid fa-book"></i>   Given Homeworks </a>
+        </li>
+        <li>
+             <a href="{% url 'schedule_t' %}"><i class="fa-solid fa-table"></i>   My Schedule </a>
+        </li>
+    </ul>
+
+{% endblock %}
