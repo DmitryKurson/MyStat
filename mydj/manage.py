@@ -2,9 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import jinja2
+import logging
+logging.debug("Sys imported")
+logging.debug("Sys logging")
 
 def main():
+
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mydj.settings')
     try:
@@ -19,4 +22,6 @@ def main():
 
 
 if __name__ == '__main__':
+    logging.info("Program started")
     main()
+

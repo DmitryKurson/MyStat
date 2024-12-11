@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys
-from django.conf.global_settings import STATICFILES_DIRS
-
+from django.conf.global_settings import STATICFILES_DIRS, LOGGING
+import logging
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(BASE_DIR))
@@ -12,6 +12,7 @@ SECRET_KEY = 'django-insecure-kdvlr4k7!*kp=h^mwv(axl32@!fsb8(pt&a0@xyt82z1*63h!v
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -87,6 +88,41 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+LOGGING = {
+    'version':1,
+    'disable_existing_loggers': False,
+
+    'formatters':{
+        'mylog': {
+            'format': 'Level: {levelname}\n{message}\nTime: {asctime}\n',
+            'style': '{',
+        }
+
+
+    },
+    'handlers':{
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'django_app.log',
+            'formatter': 'mylog',
+        },
+    },
+     'loggers': {
+        'main':{
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'teacher':{
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
+
 
 
 # Internationalization
